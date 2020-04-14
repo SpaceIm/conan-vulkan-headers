@@ -1,6 +1,6 @@
 import os
 
-from conans import ConanFile, CMake, tools
+from conans import ConanFile, tools
 
 class VulkanHeadersConan(ConanFile):
     name = "vulkan-headers"
