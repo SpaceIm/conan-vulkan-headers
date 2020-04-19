@@ -32,5 +32,5 @@ class VulkanHeadersConan(ConanFile):
 
     def package_info(self):
         # CMake Target should be Vulkan::Headers
-        self.cpp_info.names["cmake_find_package"] = "Vulkan-Headers"
-        self.cpp_info.names["cmake_find_package_multi"] = "Vulkan-Headers"
+        self.cpp_info.names["cmake_find_package"] = "VulkanHeaders"
+        self.cpp_info.names["cmake_find_package_multi"] = "VulkanHeaders"
