@@ -20,7 +20,9 @@ class VulkanHeadersConan(ConanFile):
 
     def source(self):
         tools.get(**self.conan_data["sources"][self.version])
-        os.rename("Vulkan-Headers-" + self.version, self._source_subfolder)
+        url = self.conan_data["sources"][self.version]["url"]
+        extracted_dir = "Vulkan-Headers-" + os.path.basename(url).replace(".tar.gz", "").replace(".zip", "")
+        os.rename(extracted_dir, self._source_subfolder)
 
     def package(self):
         self.copy("LICENSE.txt", dst="licenses", src=self._source_subfolder)
