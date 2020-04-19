@@ -25,6 +25,8 @@ class VulkanHeadersConan(ConanFile):
     def package(self):
         self.copy("LICENSE.txt", dst="licenses", src=self._source_subfolder)
         self.copy("*", dst="include", src=os.path.join(self.source_folder, self._source_subfolder, "include"))
+        self.copy("*", dst=os.path.join("res", "vulkan", "registry"),
+                       src=os.path.join(self.source_folder, self._source_subfolder, "registry"))
 
     def package_info(self):
         # CMake Target should be Vulkan::Headers
